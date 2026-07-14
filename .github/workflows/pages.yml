@@ -24,7 +24,7 @@ jobs:
       - name: Download released site
         run: |
           curl -L "https://github.com/myeongkong2/imps-2026/releases/download/imps/imps-interactive-github-pages.zip" -o site.zip
-          unzip site.zip
+          unzip site.zip || test -f imps-interactive/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
