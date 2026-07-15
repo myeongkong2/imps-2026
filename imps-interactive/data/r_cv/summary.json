@@ -1,0 +1,21 @@
+{
+    "model":  "TAN BN classifier",
+    "validation":  "ordinary non-stratified 10-fold cross-validation",
+    "n":  1590,
+    "limited_n":  297,
+    "observed_limited":  0.18679245283018867,
+    "mean_cv_probability":  0.19714242148599415,
+    "auc":  0.73146520632986212,
+    "youden_threshold":  0.174231825715066,
+    "sensitivity":  0.70033670033670037,
+    "specificity":  0.65583913379737047,
+    "accuracy":  0.66415094339622638,
+    "ppv":  0.31852986217457885,
+    "npv":  0.90501600853788688,
+    "confusion_matrix":  {
+                             "tp":  208,
+                             "fn":  89,
+                             "fp":  445,
+                             "tn":  848
+                         }
+}

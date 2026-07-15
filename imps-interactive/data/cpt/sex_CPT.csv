@@ -1,0 +1,13 @@
+"sex","functional_status","age_group","probability"
+"male","independent","65-69",0.298523985239852
+"female","independent","65-69",0.701476014760148
+"male","limited","65-69",0.667763157894737
+"female","limited","65-69",0.332236842105263
+"male","independent","70-79",0.416897506925208
+"female","independent","70-79",0.583102493074792
+"male","limited","70-79",0.615068493150685
+"female","limited","70-79",0.384931506849315
+"male","independent","80+",0.591961852861035
+"female","independent","80+",0.408038147138965
+"male","limited","80+",0.669665809768638
+"female","limited","80+",0.330334190231363

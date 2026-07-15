@@ -1,0 +1,16 @@
+"from","to","bootstrap_strength"
+"functional_status","age_group",1
+"functional_status","sex",1
+"functional_status","physical_health",1
+"functional_status","cognitive_function",1
+"functional_status","psychological_condition",1
+"functional_status","social_resources",1
+"functional_status","socioeconomic_resources",1
+"functional_status","health_behavior",1
+"age_group","sex",0.435
+"age_group","physical_health",0.72
+"age_group","socioeconomic_resources",0.775
+"sex","health_behavior",0.499
+"physical_health","psychological_condition",0.882
+"socioeconomic_resources","cognitive_function",0.49
+"psychological_condition","social_resources",0.915

@@ -1,0 +1,13 @@
+"health_behavior","functional_status","sex","probability"
+"low","independent","male",0.404963870562363
+"mid","independent","male",0.410618912975181
+"high","independent","male",0.184417216462457
+"low","limited","male",0.546462063086104
+"mid","limited","male",0.341858482523444
+"high","limited","male",0.111679454390452
+"low","independent","female",0.176981541802389
+"mid","independent","female",0.398479913137894
+"high","independent","female",0.424538545059718
+"low","limited","female",0.383411580594679
+"mid","limited","female",0.355242566510172
+"high","limited","female",0.261345852895149
