@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260715w" />
+  <link rel="stylesheet" href="styles.css?v=20260717c" />
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -61,7 +61,7 @@
       <div class="analysis-basis">
         <span><b>근거</b> 상태를 클릭해 100%로 고정 · 다시 클릭해 해제</span>
         <span><b>갱신</b> 선택 즉시 모든 노드의 조건부확률 재계산</span>
-        <span><b>구조</b> 전체 표본 최종 TAN과 CPT</span>
+        <span><b>구조</b> R에서 추정한 전체 표본 최종 TAN CPT</span>
       </div>
 
       <div class="node-editor" aria-live="polite">
@@ -134,11 +134,11 @@
       <div class="section-heading">
         <p class="eyebrow netica-eyebrow">3.2–3.3 · POSTERIOR INFERENCE</p>
         <h2>최종 네트워크 사후확률 추론</h2>
-        <p>여기부터는 전체 표본으로 추정한 최종 TAN 네트워크 결과입니다. 노드에 근거를 고정했을 때 기능제한 확률이 어떻게 갱신되는지 보여줍니다.</p>
+        <p>전체 표본으로 추정한 최종 TAN의 사후확률 결과입니다. 아래 Netica 이미지는 기능상태를 근거로 고정한 역방향 추론 참고 화면입니다.</p>
       </div>
 
       <article class="scenario-chart">
-        <header><div><h3>대표 근거 시나리오</h3><p>근거를 추가했을 때의 기능제한 사후확률</p></div><span>Netica posterior</span></header>
+        <header><div><h3>대표 근거 시나리오</h3><p>근거를 추가했을 때의 기능제한 사후확률</p></div><span>Final TAN posterior</span></header>
         <div id="scenario-bars" class="bar-list"></div>
       </article>
 
@@ -245,6 +245,6 @@ fitted &lt;- bn.fit(structure, train,
   </main>
 
   <footer><p>AHA! LAB · Department of Psychology, Ajou University</p><p>IMPS 2026 연구 결과</p></footer>
-  <script src="app.js?v=20260717b" defer></script>
+  <script src="app.js?v=20260717c" defer></script>
 </body>
 </html>

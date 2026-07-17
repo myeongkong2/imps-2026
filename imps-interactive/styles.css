@@ -238,7 +238,7 @@ html[lang="en"] .netica-card-footer p{font-size:11px;white-space:nowrap}
 
 /* Follow the poster narrative: Introduction → Methodology → Results → Conclusion → References. */
 #main{display:flex;flex-direction:column}
-#top{order:1}#study{order:2}#methods-detail{order:3}#results{order:4}#r-network{order:5}#netica{order:6}#conclusion{order:7}#references{order:8}
+#top{order:1}#study{order:2}#methods-detail{order:3}#results{order:4}#netica{order:5}#r-network{order:6}#conclusion{order:7}#references{order:8}
 
 /* Compact the page without shrinking essential labels or probabilities. */
 .section{padding-top:56px;padding-bottom:56px}
