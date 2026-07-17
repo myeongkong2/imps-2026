@@ -55,8 +55,8 @@ const exactTranslations = new Map(Object.entries({
   "선택하면 100%, 같은 상태를 다시 누르면 해제됩니다.": "A click sets 100%; clicking the same state again clears it.",
   "기준 확률로 되돌리기": "Reset to Baseline",
   "모든 설정 초기화": "Reset All Settings",
-  "이 노드만 초기화": "Reset This Node Only",
-  "기능상태만 초기화": "Reset Functional Status Only",
+  "노드 초기화": "Reset Node",
+  "기능상태 초기화": "Reset Functional Status",
   "초기화": "Reset",
   "기능제한 사후확률": "Posterior probability of limitation",
   "기능제한 직접 조절": "Adjust limitation directly",
@@ -75,8 +75,8 @@ const exactTranslations = new Map(Object.entries({
   "근거를 추가했을 때의 기능제한 사후확률": "Posterior probability of limitation after adding evidence",
   "기능상태를 100%로 고정한 역방향 진단추론": "Reverse Diagnostic Inference by Setting Functional Status to 100%",
   "결과 상태를 근거로 넣고 각 예측 노드의 조건부 분포를 비교합니다.": "Enter the outcome as evidence and compare conditional distributions across predictor nodes.",
-  "기능독립 100%": "Functionally Independent 100%",
-  "기능제한 100%": "Functionally Limited 100%",
+  "기능독립 100%": "Independent 100%",
+  "기능제한 100%": "Limited 100%",
   "기능제한이 없는 집단의 조건부 노드 분포": "Conditional distributions: independent group",
   "기능제한 집단의 조건부 노드 분포": "Conditional distributions: limited group",
   "PDF 원본 열기": "Open Original PDF",
@@ -332,7 +332,7 @@ function buildNodeControls() {
     const baseline = data.baseline[node];
     card.setAttribute("aria-label", `${config.label} 상태를 클릭해 100% 근거 선택`);
     card.innerHTML = `
-      <header><strong>${config.label}</strong><button type="button" class="node-reset" aria-label="${config.label}만 초기화">이 노드만 초기화</button></header>
+      <header><strong>${config.label}</strong><button type="button" class="node-reset" aria-label="${config.label}만 초기화">노드 초기화</button></header>
       ${config.states.map(state => `
         <button type="button" class="dist-row" data-state="${state}" aria-label="${config.label} ${stateLabel(state)} 100% 근거 설정">
           <em>${stateLabel(state)}</em>

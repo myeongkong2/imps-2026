@@ -265,6 +265,53 @@ html[lang="en"] .netica-card-footer p{font-size:11px;white-space:nowrap}
 .netica-card>img{height:265px;padding:12px}
 .reverse-heading{margin-top:24px}
 .results-section .section-heading,.netica-section .section-heading,.method-section .section-heading{margin-bottom:22px}
+
+/* Keep bilingual network controls aligned inside their cards. */
+.bn-node>header{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;
+  gap:7px;
+}
+.bn-node>header strong{
+  min-width:0;
+  white-space:normal;
+  overflow-wrap:normal;
+  word-break:keep-all;
+}
+.node-reset{
+  min-width:0;
+  max-width:100%;
+  padding:4px 6px;
+  line-height:1.2;
+  text-align:center;
+}
+.dist-row{
+  grid-template-columns:48px minmax(0,1fr) 58px;
+  grid-template-rows:auto auto;
+  align-items:center;
+}
+.dist-row em,.dist-row>i,.dist-row b,.dist-row small{min-width:0}
+.dist-row b{white-space:nowrap;text-align:right}
+.dist-row small{
+  grid-column:2/4;
+  justify-self:end;
+  max-width:100%;
+  white-space:nowrap;
+}
+.target-evidence-row{
+  grid-template-columns:auto auto minmax(0,1fr);
+}
+.target-evidence-row #target-reset{grid-column:auto}
+.target-evidence-row button{
+  min-width:0;
+  white-space:nowrap;
+  line-height:1.25;
+}
+html[lang="en"] .bn-node>header strong{
+  white-space:normal;
+  overflow-wrap:normal;
+}
 .metrics-row{gap:8px;margin-bottom:12px}
 .metrics-row article{padding:12px 14px}
 .results-grid{gap:10px}
