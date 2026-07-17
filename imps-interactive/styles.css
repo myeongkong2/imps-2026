@@ -232,7 +232,7 @@ html[lang="en"] .netica-card-footer p{font-size:11px;white-space:nowrap}
 .node-reset{flex:0 0 auto}
 .dist-row{grid-template-columns:50px minmax(0,1fr) 64px}
 .dist-row small{grid-column:2/4;text-align:right;margin:0;white-space:nowrap}
-.method-model-card>footer{display:grid;gap:5px}
+.method-model-card>footer{display:grid;gap:5px;text-align:left;justify-items:start;justify-content:stretch}
 .method-model-card>footer a{color:#246fc8;font-weight:700;text-decoration:none;overflow-wrap:anywhere}
 .method-model-card>footer a:hover{text-decoration:underline}
 
