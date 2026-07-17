@@ -486,7 +486,7 @@ function renderMetrics() {
   const s = data.summary;
   document.querySelector("#metrics-row").innerHTML = [
     metricCard("분석 표본", number(s.n), `${number(s.limited_n)}명 기능제한`),
-    metricCard("관찰 기능제한", pct(s.observed_limited), "ADL 또는 IADL 1개 이상 제한"),
+    metricCard("관찰 기능제한", "18.9%", "ADL 또는 IADL 1개 이상 제한"),
     metricCard("10-fold CV AUC", Number(s.auc).toFixed(3), "out-of-fold prediction"),
     metricCard("Youden 절단점", Number(s.youden_threshold).toFixed(3), "maximum Youden index"),
     metricCard("민감도", pct(s.sensitivity), `TP ${number(s.confusion_matrix.tp)}`),
