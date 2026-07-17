@@ -235,6 +235,7 @@ html[lang="en"] .netica-card-footer p{font-size:11px;white-space:nowrap}
 .method-model-card>footer{display:grid;gap:5px;text-align:left;justify-items:start;justify-content:stretch}
 .method-model-card>footer a{color:#246fc8;font-weight:700;text-decoration:none;overflow-wrap:anywhere}
 .method-model-card>footer a:hover{text-decoration:underline}
+.confusion-matrix th:first-child,.confusion-matrix td:first-child{text-align:center}
 
 /* Follow the poster narrative: Introduction → Methodology → Results → Conclusion → References. */
 #main{display:flex;flex-direction:column}

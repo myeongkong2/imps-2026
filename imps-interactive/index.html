@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260717d" />
+  <link rel="stylesheet" href="styles.css?v=20260717e" />
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -110,7 +110,7 @@
       <div class="section-heading">
         <p class="eyebrow r-eyebrow">3 · RESULTS</p>
         <h2>분석 결과</h2>
-        <p>10-fold 교차검증 성능과 노드 상태별 기능제한률을 제시합니다.</p>
+        <p>10-fold 교차검증 성능과 노드 상태별 예측확률·관찰률을 제시합니다.</p>
       </div>
       <div class="metrics-row" id="metrics-row"></div>
       <div class="results-grid top-results">
@@ -125,7 +125,7 @@
       </div>
 
       <article class="state-chart-card">
-        <header><div><h3>노드 상태별 기능제한률</h3><p>파란색은 평균 교차검증 예측확률, 붉은색은 실제 관찰률입니다.</p></div><span>전체 24개 상태</span></header>
+        <header><div><h3>노드 상태별 예측확률과 관찰률</h3><p>파란색은 각 대상자의 표본 밖(out-of-fold) 예측확률 평균이고, 붉은색은 같은 상태 집단에서 실제로 기능제한이 관찰된 비율입니다.</p></div><span>전체 24개 상태</span></header>
         <div id="state-chart" class="state-chart"></div>
       </article>
     </section>
@@ -161,18 +161,18 @@
       <div class="section-heading">
         <p class="eyebrow r-eyebrow">2 · METHODOLOGY</p>
         <h2>분석 모형과 적용 방법</h2>
-        <p>원 논문의 수식을 먼저 제시하고, 바로 아래에 본 연구에서 어떻게 적용했는지를 설명합니다.</p>
+        <p>분석에 사용한 핵심 수식과 본 연구의 적용 과정을 함께 제시합니다.</p>
       </div>
       <div class="method-model-grid">
         <article class="method-model-card gsca-card">
           <header><span>01 · COMPONENT MODEL</span><h3>Convex GSCA</h3><b>21 indicators → 6 domains</b></header>
-          <p class="method-principle">원 논문에서 convex component는 관측지표의 가중합으로 정의되며, 모든 가중치는 0 이상이고 합은 1입니다.</p>
+          <p class="method-principle">Convex GSCA는 관측지표의 가중합으로 영역별 component를 구성하며, 가중치는 0 이상이고 합은 1이 되도록 추정합니다.</p>
           <div class="formula-block source-formula">
             <span>Cho &amp; Hwang (2024), Eq. 8</span>
             <div class="math-line"><var>γ</var><sub><var>p</var></sub> ≡ <var>w</var><sub><var>p</var></sub><sup>′</sup><var>z</var><sub><var>p</var></sub></div>
             <div class="math-constraint"><span>subject to</span> <var>w</var><sub><var>p</var></sub><sup>′</sup>𝟙<sub><var>J</var><var>p</var></sub> = 1,&nbsp; <var>w</var><sub><var>p</var></sub> ≥ 0</div>
           </div>
-          <div class="our-application"><b>우리 연구에서는</b><p>21개 지표를 0–100 척도로 맞춘 뒤 여섯 영역별 convex component 점수를 추정했습니다. 이 연속 점수를 각 훈련 fold의 삼분위수로 낮음·중간·높음 상태로 구분했습니다.</p></div>
+          <div class="our-application"><b>우리 연구에서는</b><p>방향을 통일한 21개 지표를 z점수로 표준화한 뒤 여섯 영역별 convex component 점수를 추정했습니다. 이 연속 점수를 각 훈련 fold의 삼분위수로 낮음·중간·높음 상태로 구분했습니다.</p></div>
           <details class="code-details"><summary>실제 사용 함수 보기</summary><pre><code>Results = gsca.fit(Z, Model, Est)
 Domain_scores = Results.INI(1).CVscore</code></pre></details>
           <footer>
@@ -245,6 +245,6 @@ fitted &lt;- bn.fit(structure, train,
   </main>
 
   <footer><p>AHA! LAB · Department of Psychology, Ajou University</p><p>IMPS 2026 연구 결과</p></footer>
-  <script src="app.js?v=20260717c" defer></script>
+  <script src="app.js?v=20260717e" defer></script>
 </body>
 </html>

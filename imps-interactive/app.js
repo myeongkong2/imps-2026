@@ -63,11 +63,11 @@ const exactTranslations = new Map(Object.entries({
   "기능독립": "Independent",
   "설정한 노드는 그대로 유지되며, 새 노드를 추가로 조절할 때마다 전체 확률이 다시 계산됩니다.": "Existing settings are maintained while the full distribution is recalculated after every adjustment.",
   "고정한 근거는 유지되며, 다른 노드를 추가로 선택할 때마다 전체 조건부확률이 다시 계산됩니다.": "Evidence remains fixed while all conditional probabilities update after each new selection.",
-  "10-fold 교차검증 성능과 노드 상태별 기능제한률을 제시합니다.": "Ten-fold cross-validation performance and limitation rates by node state.",
+  "10-fold 교차검증 성능과 노드 상태별 예측확률·관찰률을 제시합니다.": "Ten-fold cross-validation performance, predicted probabilities, and observed rates by node state.",
   "10-fold 교차검증 ROC": "10-fold Cross-validated ROC",
   "Youden 절단점 분류표": "Youden Cutoff Table",
-  "노드 상태별 기능제한률": "Functional Limitation by Node State",
-  "파란색은 평균 교차검증 예측확률, 붉은색은 실제 관찰률입니다.": "Blue shows mean cross-validated probability; red shows the observed rate.",
+  "노드 상태별 예측확률과 관찰률": "Predicted Probability and Observed Rate by Node State",
+  "파란색은 각 대상자의 표본 밖(out-of-fold) 예측확률 평균이고, 붉은색은 같은 상태 집단에서 실제로 기능제한이 관찰된 비율입니다.": "Blue is the mean out-of-fold predicted probability for participants in each state; red is the observed proportion with functional limitation in the same group.",
   "전체 24개 상태": "All 24 states",
   "최종 네트워크 사후확률 추론": "Posterior Inference in the Final Network",
   "전체 표본으로 추정한 최종 TAN의 사후확률 결과입니다. 아래 Netica 이미지는 기능상태를 근거로 고정한 역방향 추론 참고 화면입니다.": "Posterior probabilities from the final full-sample TAN. The Netica images below are reference views for reverse inference with functional status fixed as evidence.",
@@ -83,9 +83,9 @@ const exactTranslations = new Map(Object.entries({
   "무엇을 어떻게 분석했나": "Study Design and Analysis",
   "모형이 계산되는 방식": "How the Models Work",
   "분석 모형과 적용 방법": "Models and Their Application",
-  "원 논문의 수식을 먼저 제시하고, 바로 아래에 본 연구에서 어떻게 적용했는지를 설명합니다.": "Each original model equation is followed by a plain-language description of how it was applied in this study.",
-  "원 논문에서 convex component는 관측지표의 가중합으로 정의되며, 모든 가중치는 0 이상이고 합은 1입니다.": "The original paper defines a convex component as a weighted sum of indicators, with nonnegative weights that sum to one.",
-  "21개 지표를 0–100 척도로 맞춘 뒤 여섯 영역별 convex component 점수를 추정했습니다. 이 연속 점수를 각 훈련 fold의 삼분위수로 낮음·중간·높음 상태로 구분했습니다.": "We placed 21 indicators on a 0–100 scale and estimated convex component scores for six domains. Continuous scores were categorized as low, mid, or high using tertiles estimated within each training fold.",
+  "분석에 사용한 핵심 수식과 본 연구의 적용 과정을 함께 제시합니다.": "Key equations are presented together with how they were applied in this study.",
+  "Convex GSCA는 관측지표의 가중합으로 영역별 component를 구성하며, 가중치는 0 이상이고 합은 1이 되도록 추정합니다.": "Convex GSCA forms domain components as weighted sums of observed indicators, with nonnegative weights constrained to sum to one.",
+  "방향을 통일한 21개 지표를 z점수로 표준화한 뒤 여섯 영역별 convex component 점수를 추정했습니다. 이 연속 점수를 각 훈련 fold의 삼분위수로 낮음·중간·높음 상태로 구분했습니다.": "After aligning directionality, we standardized 21 indicators as z-scores and estimated convex component scores for six domains. Continuous scores were categorized as low, mid, or high using tertiles estimated within each training fold.",
   "TAN은 기능상태를 모든 예측노드의 부모로 두고, 예측노드 사이에는 최대 하나의 추가 부모를 허용하여 조건부 의존성을 표현합니다.": "TAN makes functional status a parent of every predictor and allows at most one additional predictor parent to represent conditional dependence.",
   "여섯 영역과 연령대·성별을 예측노드로 사용했습니다. 삼분위 절단점은 훈련 fold에서만 정하고 10-fold 교차검증으로 성능을 평가한 뒤, 전체 표본으로 최종 TAN을 추정해 확률추론에 사용했습니다.": "We used six domains, age group, and sex as predictors. Tertile cutpoints were estimated only in each training fold, performance was evaluated by 10-fold cross-validation, and the final full-sample TAN was used for probabilistic inference.",
   "우리 연구에서는": "In this study",
@@ -96,9 +96,7 @@ const exactTranslations = new Map(Object.entries({
   "TAN 분류모형은 AUC 0.731의 수용 가능한 선별 성능을 보였습니다. 기능제한 확률은 근거가 없을 때 18.9%였고, 신체건강과 인지기능이 모두 낮으면 42.2%, 여섯 영역이 모두 낮으면 60.3%로 증가했습니다. 반대로 여섯 영역이 모두 높으면 3.8%였습니다. 순방향 예측과 역방향 진단추론은 위험 선별과 기능 취약성 프로파일 해석에 함께 활용할 수 있습니다.": "The TAN classifier showed acceptable screening performance with an AUC of 0.731. The probability of functional limitation was 18.9% without evidence, 42.2% when physical health and cognitive function were both low, and 60.3% when all six domains were low. It fell to 3.8% when all six domains were high. Forward prediction and reverse diagnostic inference can jointly support risk screening and interpretation of functional vulnerability profiles.",
   "참고문헌": "References",
   "실제 분석에 사용한 Convex GSCA 구성식과 TAN 확률분해 및 학습 함수를 요약했습니다.": "The actual Convex GSCA specification, TAN factorization, and learning functions used in the analysis.",
-  "같은 영역의 지표를 공통 0–100 척도로 맞춘 뒤, 비음수·합계 1의 가중치로 결합해 해석 가능한 영역점수를 구성합니다.": "Indicators in each domain are placed on a common 0–100 scale and combined using nonnegative weights that sum to one.",
   "ALS로 W와 A를 교대로 갱신해 오차분산의 합을 최소화": "Alternately update W and A by ALS to minimize the sum of error variances",
-  "21개 POMP 지표": "21 POMP indicators",
   "6개 연속 점수": "6 continuous scores",
   "훈련 fold 삼분위": "Training-fold tertiles",
   "블록 크기 4·6·2·3·3·3 · Bootstrap 1,000회": "Block sizes 4·6·2·3·3·3 · 1,000 bootstrap samples",
@@ -134,7 +132,7 @@ const tokenTranslations = [
   ["전체 표본", "Full Sample"], ["근거 없음", "No Evidence"], ["유지 중", "Maintained"], ["유지", "Maintained"],
   ["조절", "Adjusted"], ["연령대", "Age Group"], ["성별", "Sex"], ["여성", "Female"], ["남성", "Male"],
   ["낮음", "Low"], ["중간", "Mid"], ["높음", "High"], ["80세 이상", "Age 80+"], ["세", ""],
-  ["실제 ＼ 예측", "Actual ＼ Predicted"], ["독립", "Independent"], ["제한", "Limited"],
+  ["실제/예측", "Actual/Predicted"], ["독립", "Independent"], ["제한", "Limited"],
   ["분석 결과를 불러오지 못했습니다. 페이지를 새로고침해 주세요.", "Could not load the analysis results. Please refresh the page."],
   ["기준", "Baseline"], ["관찰", "Observed"], ["확률", "Probability"], ["근거", "evidence"]
 ];
@@ -497,7 +495,7 @@ function renderMetrics() {
 
   const m = s.confusion_matrix;
   document.querySelector("#confusion-matrix").innerHTML = `
-    <table><thead><tr><th>실제 ＼ 예측</th><th>독립</th><th>제한</th></tr></thead>
+    <table><thead><tr><th>실제/예측</th><th>독립</th><th>제한</th></tr></thead>
     <tbody><tr><th>독립</th><td><b>${number(m.tn)}</b><small>TN</small></td><td><b>${number(m.fp)}</b><small>FP</small></td></tr>
     <tr><th>제한</th><td><b>${number(m.fn)}</b><small>FN</small></td><td><b>${number(m.tp)}</b><small>TP</small></td></tr></tbody></table>`;
 }
